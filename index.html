@@ -192,7 +192,7 @@
             color: var(--text-light);
         }
 
-        /* Services Section - UPDATED STYLES */
+        /* Services Section - UPDATED TYPOGRAPHY */
         #services {
             background-color: var(--white);
         }
@@ -200,21 +200,22 @@
         #services .section-subtitle {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 60px; /* Increased bottom margin */
+            margin: 0 auto 60px;
+            font-size: 1rem; /* Slightly smaller subtitle */
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
-            align-items: stretch; /* Makes all cards in a row the same height */
+            align-items: stretch;
         }
 
         .service-card {
             background: var(--white);
             border: 1px solid #e2e8f0;
             border-radius: 16px;
-            padding: 45px 25px 30px; /* Adjusted padding for badge */
+            padding: 40px 25px 30px;
             text-align: center;
             transition: all 0.3s ease;
             position: relative;
@@ -225,80 +226,82 @@
         
         .most-popular-badge {
             position: absolute;
-            top: -15px; /* Position badge above the card */
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--gradient); /* Gradient background for badge */
+            background: var(--gradient);
             color: var(--white);
             padding: 6px 16px;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
         }
         
         .service-card.popular {
-            border: 2px solid var(--primary-blue); /* Solid blue border */
+            border: 2px solid var(--primary-blue);
             box-shadow: 0 10px 30px rgba(79, 70, 229, 0.1);
         }
 
         .service-card .icon {
-            height: 40px;
-            width: 40px;
-            margin: 0 auto 20px;
+            height: 36px;
+            width: 36px;
+            margin: 0 auto 15px;
             display: block;
         }
         
         .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-            min-height: 68px; /* Aligns titles even if they wrap to two lines */
+            font-size: 1.25rem; /* Reduced font size */
+            margin-bottom: 10px;
+            font-weight: 700;
+            min-height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .service-card .description {
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Reduced font size */
             color: var(--text-light);
-            margin-bottom: 25px;
-            flex-grow: 1; /* Allows description to take up space, aligning lists */
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         .service-card ul {
             list-style: none;
             text-align: left;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
             width: fit-content;
         }
         
         .service-card ul li {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-size: 1rem;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 0.9rem; /* Reduced font size */
             color: var(--slate-gray);
         }
 
         .service-card ul li .icon {
-            height: 20px;
-            width: 20px;
+            height: 18px;
+            width: 18px;
             margin: 0;
-            color: var(--green); /* Green arrow icon */
+            color: var(--green);
         }
         
         .service-card .price {
-            font-size: 1.8rem;
-            font-weight: 800;
+            font-size: 1.7rem; /* Reduced font size */
+            font-weight: 700;
             color: var(--text-dark);
-            margin: auto 0 25px 0; /* Aligns prices */
+            margin: auto 0 20px 0;
         }
 
         .service-card .btn {
-            border-radius: 50px; /* Pill shape */
-            padding: 14px 28px;
+            border-radius: 50px;
+            padding: 12px 24px;
             font-weight: 600;
+            font-size: 0.95rem; /* Reduced font size */
             width: 100%;
         }
 
