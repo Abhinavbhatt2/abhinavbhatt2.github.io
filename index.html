@@ -16,6 +16,7 @@
             --white: #FFFFFF;
             --text-dark: #1F2937;
             --text-light: #64748B;
+            --green: #10B981;
             --gradient: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
         }
 
@@ -191,8 +192,7 @@
             color: var(--text-light);
         }
 
-
-        /* Services Section */
+        /* Services Section - UPDATED STYLES */
         #services {
             background-color: var(--white);
         }
@@ -200,95 +200,116 @@
         #services .section-subtitle {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 50px;
+            margin: 0 auto 60px; /* Increased bottom margin */
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
+            align-items: stretch; /* Makes all cards in a row the same height */
         }
 
         .service-card {
             background: var(--white);
             border: 1px solid #e2e8f0;
             border-radius: 16px;
-            padding: 30px;
+            padding: 45px 25px 30px; /* Adjusted padding for badge */
             text-align: center;
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
         }
         
         .most-popular-badge {
             position: absolute;
-            top: 20px;
+            top: -15px; /* Position badge above the card */
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--primary-blue);
+            background: var(--gradient); /* Gradient background for badge */
             color: var(--white);
-            padding: 4px 12px;
+            padding: 6px 16px;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: 600;
         }
         
         .service-card.popular {
-            border-color: var(--primary-purple);
-            box-shadow: 0 0 0 3px var(--primary-purple);
+            border: 2px solid var(--primary-blue); /* Solid blue border */
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.1);
         }
 
         .service-card .icon {
-            height: 48px;
-            width: 48px;
+            height: 40px;
+            width: 40px;
             margin: 0 auto 20px;
             display: block;
         }
         
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
+            font-weight: 600;
+            min-height: 68px; /* Aligns titles even if they wrap to two lines */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .service-card .description {
-            font-size: 0.95rem;
-            min-height: 110px;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            flex-grow: 1; /* Allows description to take up space, aligning lists */
         }
 
         .service-card ul {
             list-style: none;
             text-align: left;
-            margin-bottom: 30px;
-            min-height: 120px;
+            margin: 0 auto 30px;
+            width: fit-content;
         }
         
         .service-card ul li {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
+            margin-bottom: 12px;
+            font-size: 1rem;
             color: var(--slate-gray);
         }
 
         .service-card ul li .icon {
-            height: 16px;
-            width: 16px;
+            height: 20px;
+            width: 20px;
             margin: 0;
-            color: var(--primary-blue);
+            color: var(--green); /* Green arrow icon */
         }
         
         .service-card .price {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 20px;
+            margin: auto 0 25px 0; /* Aligns prices */
+        }
+
+        .service-card .btn {
+            border-radius: 50px; /* Pill shape */
+            padding: 14px 28px;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        .service-card.popular .btn {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .service-card:not(.popular) .btn {
+            background-color: var(--dark-blue);
+            color: var(--white);
         }
 
         /* Custom Solutions Section */
@@ -697,9 +718,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .service-card .description { min-height: auto; }
-            .service-card ul { min-height: auto; }
-
             .form-row {
                 flex-direction: column;
             }
@@ -727,7 +745,6 @@
                 margin-right: auto;
             }
         }
-
     </style>
 </head>
 <body>
@@ -772,6 +789,7 @@
             </div>
         </section>
         
+        <!-- UPDATED SERVICES SECTION -->
         <section id="services">
             <div class="container">
                 <h2>Our <span>Premium Services</span></h2>
@@ -780,64 +798,65 @@
                     <!-- Service Card 1 -->
                     <div class="service-card popular">
                         <div class="most-popular-badge">Most Popular</div>
-                        <svg class="icon" style="color: #4F46E5;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+                        <svg class="icon" style="color: var(--primary-blue);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
                         <h3>AI-Powered Job Search Optimization</h3>
                         <p class="description">Our revolutionary AI analyzes thousands of job postings to match you with perfect opportunities and optimize your application strategy.</p>
                         <ul>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Smart job matching</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Application tracking</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Success analytics</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Market insights</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Smart job matching</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Application tracking</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Success analytics</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Market insights</li>
                         </ul>
                         <p class="price">Starting at ₹99</p>
-                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                        <a href="#contact" class="btn">Get Started</a>
                     </div>
                     <!-- Service Card 2 -->
                     <div class="service-card">
-                         <svg class="icon" style="color: #10B981;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>
+                         <svg class="icon" style="color: var(--green);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>
                         <h3>Professional Resume Writing</h3>
                         <p class="description">Expert-crafted resumes that pass ATS systems and impress hiring managers. Tailored to your industry and career level.</p>
                         <ul>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> ATS-optimized format</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Industry-specific keywords</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Multiple revisions</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Cover letter included</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> ATS-optimized format</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Industry-specific keywords</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Multiple revisions</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Cover letter included</li>
                         </ul>
                         <p class="price">Starting at ₹149</p>
-                        <a href="#contact" class="btn btn-dark">Get Started</a>
+                        <a href="#contact" class="btn">Get Started</a>
                     </div>
                     <!-- Service Card 3 -->
                     <div class="service-card">
-                        <svg class="icon" style="color: #0A66C2;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                        <svg class="icon" style="color: #0A66C2;" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                         <h3>LinkedIn Profile Optimization</h3>
                         <p class="description">Transform your LinkedIn into a powerful networking and job-searching tool that attracts recruiters and opportunities.</p>
                          <ul>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Compelling headline</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Optimized summary</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Skills optimization</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Network strategy</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Compelling headline</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Optimized summary</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Skills optimization</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Network strategy</li>
                         </ul>
                         <p class="price">Starting at ₹79</p>
-                        <a href="#contact" class="btn btn-dark">Get Started</a>
+                        <a href="#contact" class="btn">Get Started</a>
                     </div>
                     <!-- Service Card 4 -->
                     <div class="service-card">
-                         <svg class="icon" style="color: #8B5CF6;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>
+                         <svg class="icon" style="color: var(--primary-purple);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>
                         <h3>Mock Interview Sessions</h3>
                         <p class="description">Practice with industry experts and AI-powered feedback to master your interview skills and boost confidence.</p>
                         <ul>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> 1-on-1 sessions</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Industry-specific prep</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Detailed feedback</li>
-                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg> Follow-up coaching</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> 1-on-1 sessions</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Industry-specific prep</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Detailed feedback</li>
+                            <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.21 4.79a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06L13.94 11H5.75a.75.75 0 0 1 0-1.5h8.19L10.21 5.85a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg> Follow-up coaching</li>
                         </ul>
                         <p class="price">Starting at ₹749</p>
-                        <a href="#contact" class="btn btn-dark">Get Started</a>
+                        <a href="#contact" class="btn">Get Started</a>
                     </div>
                 </div>
             </div>
         </section>
-
+        
+        <!-- Rest of the page remains the same -->
         <section class="custom-solutions">
             <div class="container">
                 <a href="#contact" class="btn btn-secondary">Contact for Custom Solutions</a>
