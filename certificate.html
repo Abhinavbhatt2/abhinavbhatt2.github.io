@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - ONEJOB AI</title>
+    <title>Certificates - ONEJOB AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS styles are embedded in the <style> tag -->
     <style>
         /* --- Global Styles & Variables --- */
         :root {
-            --primary-blue: #1D639C;
-            --dark-text: #2c3e50;
-            --light-text: #5a6a79;
-            --background-color: #f8f9fa;
-            --white-color: #ffffff;
-            --border-color: #e0e0e0;
+            --primary-blue: #1d679e;
+            --light-blue: #3b82f6;
+            --dark-text: #1f2937;
+            --body-text: #4b5563;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --white: #ffffff;
         }
 
         * {
@@ -27,251 +26,208 @@
         }
 
         body {
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--background-color);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white); /* Changed to white to match the new image */
             color: var(--dark-text);
-            line-height: 1.6;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* --- Header & Navigation --- */
-        .main-header {
-            background-color: var(--white-color);
-            padding: 15px 0;
+        /* --- Header Styles --- */
+        header {
+            background-color: var(--white);
             border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 15px 0;
         }
 
-        .main-header .container {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 24px;
             font-weight: 700;
-            color: var(--primary-blue);
-            text-decoration: none;
+            font-size: 24px;
+            color: var(--dark-text);
             display: flex;
             align-items: center;
+            text-decoration: none; /* Added */
+        }
+        
+        .logo span {
+            text-decoration: underline; /* Added to match image */
         }
 
-        .logo-symbol {
-            font-size: 32px;
+        .logo-icon {
+            color: var(--primary-blue);
+            font-size: 28px;
             margin-right: 8px;
-            font-weight: 400;
         }
 
-        .main-nav ul {
+        nav ul {
             list-style: none;
             display: flex;
             align-items: center;
             gap: 30px;
         }
 
-        .main-nav a {
+        nav a {
             text-decoration: none;
-            color: var(--light-text);
+            color: var(--body-text);
             font-weight: 600;
+            font-size: 16px;
             transition: color 0.3s ease;
         }
 
-        .main-nav a:hover,
-        .main-nav a.active {
+        nav a:hover {
             color: var(--primary-blue);
         }
+        
+        nav a.active {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 4px;
+        }
 
-        .cta-button {
+        .nav-button {
             background-color: var(--primary-blue);
-            color: var(--white-color);
+            color: var(--white);
             padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
+            border-radius: 8px;
             font-weight: 600;
             transition: background-color 0.3s ease;
         }
 
-        .cta-button:hover {
-            background-color: #164f7c;
+        .nav-button:hover {
+            background-color: #17507b;
+            color: var(--white);
         }
 
-        .menu-toggle {
-            display: none; /* Hidden on desktop */
-            font-size: 28px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: var(--dark-text);
-        }
-
-        /* --- Blog Section --- */
-        .blog-section {
-            padding: 80px 0;
+        /* --- Certificate Section Styles --- */
+        #certificates-section {
+            padding: 60px 0;
+            background-color: var(--bg-light); /* Light background for the main content area */
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 15px;
             font-size: 42px;
             font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
             color: var(--dark-text);
         }
         
-        .section-title span {
-            color: var(--primary-blue);
-        }
-
         .section-subtitle {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 60px auto;
-            color: var(--light-text);
             font-size: 18px;
+            text-align: center;
+            color: var(--body-text);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
 
-        .blog-grid {
+        /* --- Filter Styles --- */
+        #filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background-color: var(--white);
+            color: var(--body-text);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: #eef2ff;
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        /* --- Course Grid Styles --- */
+        #course-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
         }
 
-        .blog-card {
-            background-color: var(--white-color);
+        .course-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
+            padding: 25px;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .blog-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-        .blog-card-image img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .blog-card-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .blog-card-category {
-            display: inline-block;
-            background-color: rgba(29, 99, 156, 0.1);
-            color: var(--primary-blue);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            align-self: flex-start;
-        }
-
-        .blog-card-title {
+        .course-card h3 {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 10px;
             color: var(--dark-text);
         }
 
-        .blog-card-excerpt {
-            color: var(--light-text);
-            font-size: 15px;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .blog-card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .course-card p {
             font-size: 14px;
-            color: #888;
-        }
-        
-        .read-more-link {
-            color: var(--primary-blue);
+            color: var(--light-blue);
             font-weight: 600;
-            text-decoration: none;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Pushes button to the bottom */
+        }
+
+        .register-btn {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .register-btn:hover {
+            background-color: #17507b;
         }
         
-        .read-more-link:hover {
-            text-decoration: underline;
-        }
-
-        /* --- Footer --- */
-        .main-footer {
-            background-color: #e9ecef;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-            color: var(--light-text);
-            font-size: 14px;
-        }
-
-        /* --- Responsive Design --- */
+        /* --- Responsive Styles --- */
         @media (max-width: 768px) {
-            .main-nav {
-                position: absolute;
-                top: 71px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white-color);
-                flex-direction: column;
-                align-items: center;
-                border-bottom: 1px solid var(--border-color);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.4s ease-out;
+            nav ul {
+                display: none; /* Simple hiding for mobile demo */
             }
-
-            .main-nav.active {
-                max-height: 300px;
-                padding: 20px 0;
-            }
-            
-            .main-nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .main-nav li {
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            .cta-button {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
             .section-title {
                 font-size: 32px;
-            }
-            
-            .section-subtitle {
-                font-size: 16px;
             }
         }
     </style>
@@ -279,216 +235,167 @@
 <body>
 
     <!-- Header Section -->
-    <header class="main-header">
-        <div class="container">
+    <header>
+        <div class="container nav-container">
             <a href="#" class="logo">
-                <span class="logo-symbol">∞</span> ONE JOB
+                <span class="logo-icon">∞</span> <span>ONE JOB</span>
             </a>
-            <nav class="main-nav" id="mainNav">
+            <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Services</a></li>
-                    <li><a href="#" class="active">Blog</a></li>
-                    <li><a href="#">Certificates</a></li>
-                    <li><a href="#" class="cta-button">ONEJOB AI Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#" class="active">Certificates</a></li>
+                    <li><a href="#" class="nav-button">ONEJOB AI Services</a></li>
                 </ul>
             </nav>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-                ☰ <!-- Hamburger Icon -->
-            </button>
         </div>
     </header>
 
-    <!-- Main Blog Content -->
-    <main>
-        <section class="blog-section">
-            <div class="container">
-                <h1 class="section-title">Our Latest <span>AI Insights</span></h1>
-                <p class="section-subtitle">
-                    Stay ahead in your career with tips, trends, and tutorials from the forefront of AI-powered job searching.
-                </p>
-                <!-- Blog cards will be dynamically inserted here by JavaScript -->
-                <div class="blog-grid" id="blogGrid"></div>
+    <!-- Main Certificate Section -->
+    <main id="certificates-section">
+        <div class="container">
+            <h1 class="section-title">Explore Our Certificate Courses</h1>
+            <p class="section-subtitle">
+                Enhance your skills and boost your resume with industry-recognized certifications. Filter by category to find the perfect course for your career path.
+            </p>
+
+            <!-- Filter Buttons -->
+            <div id="filter-container">
+                <!-- Filter buttons will be generated by JavaScript -->
             </div>
-        </section>
+
+            <!-- Course Grid -->
+            <div id="course-grid">
+                <!-- Course cards will be generated by JavaScript -->
+            </div>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <p>© 2023 ONEJOB AI. All Rights Reserved. Your AI-Powered Career Partner.</p>
-    </footer>
-
-    <!-- JavaScript for Mobile Menu and Dynamic Blog Cards -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            
-            // --- Mobile Menu Toggle ---
-            const menuToggle = document.getElementById('menuToggle');
-            const mainNav = document.getElementById('mainNav');
-            if (menuToggle && mainNav) {
-                menuToggle.addEventListener('click', () => mainNav.classList.toggle('active'));
-            }
+            // --- Course Data ---
+            const courses = [
+                { title: "Python for Data Science and Machine Learning", category: "Data Science" },
+                { title: "Tableau 2024 A-Z: Hands-On Tableau Training", category: "Data Science" },
+                { title: "Machine Learning A-Z™: AI, Python & R", category: "Data Science" },
+                { title: "SQL for Data Science: Master SQL for Data Analysis", category: "Data Science" },
+                { title: "Deep Learning Specialization", category: "Data Science" },
+                { title: "Power BI: A-Z for Data Analytics", category: "Data Science" },
+                { title: "R Programming A-Z™: R For Data Science", category: "Data Science" },
 
-            // --- Dynamic Blog Card Generation ---
-            const blogGrid = document.getElementById('blogGrid');
-            if (blogGrid) {
+                { title: "The Complete 2024 Web Development Bootcamp", category: "Web Development" },
+                { title: "JavaScript: The Advanced Concepts", category: "Web Development" },
+                { title: "React - The Complete Guide (incl Hooks, React Router, Redux)", category: "Web Development" },
+                { title: "Node.js, Express, MongoDB & More: The Complete Bootcamp", category: "Web Development" },
+                { title: "Full-Stack Web Development with Python (Flask & Django)", category: "Web Development" },
+                { title: "Vue - The Complete Guide (w/ Router, Vuex & Composition API)", category: "Web Development" },
+                { title: "Modern HTML & CSS From The Beginning (Sass, Flexbox, Grid)", category: "Web Development" },
+
+                { title: "Digital Marketing Masterclass - 23 Courses in 1", category: "Digital Marketing" },
+                { title: "The Complete SEO Training Masterclass", category: "Digital Marketing" },
+                { title: "Social Media Marketing - SMM Strategy", category: "Digital Marketing" },
+                { title: "Google Ads for Beginners 2024", category: "Digital Marketing" },
+                { title: "Content Marketing Masterclass: Create Content That Sells", category: "Digital Marketing" },
+                { title: "Email Marketing: Start & Grow Your Business", category: "Digital Marketing" },
+                { title: "YouTube Masterclass: Your Guide to YouTube Success", category: "Digital Marketing" },
+
+                { title: "Project Management Professional (PMP) Exam Prep", category: "Project Management" },
+                { title: "Introduction to Project Management", category: "Project Management" }, // <<-- THIS LINE WAS CORRECTED
+                { title: "Certified ScrumMaster (CSM) - Agile Scrum Training", category: "Project Management" },
+                { title: "Agile Crash Course: Agile Project Management", category: "Project Management" },
+                { title: "Jira for Beginners: A Complete Guide", category: "Project Management" },
+                { title: "Risk Management for Projects", category: "Project Management" },
+                { title: "PRINCE2® Foundation Certification Training", category: "Project Management" },
+                { title: "Lean Six Sigma White Belt Certification", category: "Project Management" },
+
+                { title: "The Complete Cyber Security Course: Hackers Exposed!", category: "Cybersecurity" },
+                { title: "CompTIA Security+ (SY0-601) Complete Course & Exam", category: "Cybersecurity" },
+                { title: "Ethical Hacking: From Scratch to Advanced", category: "Cybersecurity" },
+                { title: "Network Security & Firewalls", category: "Cybersecurity" },
+                { title: "CISSP - Certified Information Systems Security Professional", category: "Cybersecurity" },
+                { title: "Cyber Security for Absolute Beginners", category: "Cybersecurity" },
+                { title: "Penetration Testing & Bug Bounty Hunting", category: "Cybersecurity" },
+
+                { title: "AWS Certified Solutions Architect - Associate", category: "Cloud Computing" },
+                { title: "Microsoft Azure Administrator (AZ-104)", category: "Cloud Computing" },
+                { title: "Google Cloud Professional Cloud Architect", category: "Cloud Computing" },
+                { title: "Docker and Kubernetes: The Complete Guide", category: "Cloud Computing" },
+                { title: "Terraform for the Absolute Beginners with Labs", category: "Cloud Computing" },
+                { title: "AWS Certified Cloud Practitioner CLF-C01", category: "Cloud Computing" },
+                { title: "Serverless Computing with AWS Lambda", category: "Cloud Computing" },
                 
-                // Array of 100 blog posts with specific titles and categories
-                const blogPosts = [
-                    // Job Fit Analysis & AI-Powered Application Tools
-                    { category: "Job Fit Analysis", title: "Unlock Your Potential: How AI Job Fit Analysis Pinpoints Your Dream Role." },
-                    { category: "Job Fit Analysis", title: "Beyond Keywords: What AI Really Looks for in Your Job Application." },
-                    { category: "Job Fit Analysis", title: "The Hidden Power of Compatibility: Why Job Fit Matters More Than Ever." },
-                    { category: "Job Fit Analysis", title: "Self-Assessment vs. AI: Getting an Unbiased Look at Your Job Readiness." },
-                    { category: "Job Fit Analysis", title: "From Good to Great: Using Job Fit Feedback to Tailor Your Skills." },
-                    { category: "Job Fit Analysis", title: "Are You a Perfect Match? Understanding Your Job Fit Score." },
-                    { category: "Job Fit Analysis", title: "The Future of Applications: How AI Streamlines Your Job Search." },
-                    { category: "Job Fit Analysis", title: "Don't Apply Blindly: The Strategic Advantage of Job Fit Analysis." },
-                    { category: "Job Fit Analysis", title: "Beyond the Resume: AI's Role in Matching You with Company Culture." },
-                    { category: "Job Fit Analysis", title: "Your Personal Career Compass: Navigating the Job Market with AI Fit Analysis." },
-                    // Custom Cover Letter Generation
-                    { category: "Cover Letter Generation", title: "Ditch the Generic: Why AI-Generated Cover Letters Are Your Secret Weapon." },
-                    { category: "Cover Letter Generation", title: "Crafting Compelling Narratives: The Art and Science of AI Cover Letters." },
-                    { category: "Cover Letter Generation", title: "More Than Just Words: How AI Personalizes Your Cover Letter for Every Job." },
-                    { category: "Cover Letter Generation", title: "The Perfect Opening: Hooking Hiring Managers with AI-Powered Intros." },
-                    { category: "Cover Letter Generation", title: "Show, Don't Just Tell: Using AI to Highlight Your Unique Value in Cover Letters." },
-                    { category: "Cover Letter Generation", title: "From Blank Page to Brilliance: Writing a Cover Letter in Minutes with AI." },
-                    { category: "Cover Letter Generation", title: "Beyond Templates: The Customization Power of AI in Cover Letters." },
-                    { category: "Cover Letter Generation", title: "Addressing the Hiring Manager: The AI Way to Personalized Greetings." },
-                    { category: "Cover Letter Generation", title: "What Makes a Cover Letter Stand Out? Insights from AI-Driven Creation." },
-                    { category: "Cover Letter Generation", title: "Save Time, Get Hired: Leveraging AI for Superior Cover Letters." },
-                    // HR Contact Detail Retrieval
-                    { category: "HR Contact Retrieval", title: "Who to Contact? The Power of Verified HR Details in Your Job Search." },
-                    { category: "HR Contact Retrieval", title: "Cutting Through the Noise: Directly Reaching Hiring Decision-Makers." },
-                    { category: "HR Contact Retrieval", title: "Networking Redefined: How HR Contact Retrieval Fuels Your Connections." },
-                    { category: "HR Contact Retrieval", title: "The Cold Email That Works: Using Verified Contacts for Direct Outreach." },
-                    { category: "HR Contact Retrieval", title: "Beyond LinkedIn: Finding the Right Person to Send Your Application To." },
-                    { category: "HR Contact Retrieval", title: "Your Advantage: The Strategic Importance of HR Contact Information." },
-                    { category: "HR Contact Retrieval", title: "Why Blind Applications Fail: The Case for Targeted HR Outreach." },
-                    { category: "HR Contact Retrieval", title: "From Applicant to Insider: Connecting with HR Before You Apply." },
-                    { category: "HR Contact Retrieval", title: "Ethical Networking: Best Practices for Using Retrieved HR Contact Info." },
-                    { category: "HR Contact Retrieval", title: "The Direct Approach: Maximizing Your Chances with Verified HR Contacts." },
-                    // Custom Resume Generation
-                    { category: "Resume Generation", title: "ATS-Proof Your Resume: How AI Ensures Your Application Gets Seen." },
-                    { category: "Resume Generation", title: "Beyond Bullet Points: Crafting a Resume That Tells Your Story." },
-                    { category: "Resume Generation", title: "Tailored for Success: The Power of AI-Generated Resumes for Specific Jobs." },
-                    { category: "Resume Generation", title: "Your Resume Makeover: From Generic to Gold with AI Assistance." },
-                    { category: "Resume Generation", title: "Keywords That Count: Optimizing Your Resume for Search Algorithms." },
-                    { category: "Resume Generation", title: "The 6-Second Rule: Designing an AI-Optimized Resume for Impact." },
-                    { category: "Resume Generation", title: "Showcasing Your Strengths: How AI Highlights Your Best Achievements." },
-                    { category: "Resume Generation", title: "Resume Do's and Don'ts: Insights from AI-Powered Creation." },
-                    { category: "Resume Generation", title: "Eliminating the Guesswork: Building a Perfect Resume with AI." },
-                    { category: "Resume Generation", title: "From Scratch to Standout: The Journey of an AI-Generated Resume." },
-                    // AI-Powered Job Search Optimization (Premium Service)
-                    { category: "Job Search Optimization", title: "The Smart Way to Job Search: Revolutionizing Your Strategy with AI." },
-                    { category: "Job Search Optimization", title: "Beyond Aggregators: How AI Finds Hidden Gem Job Opportunities." },
-                    { category: "Job Search Optimization", title: "Your Personal Job Search Strategist: AI That Learns and Adapts." },
-                    { category: "Job Search Optimization", title: "Maximize Your Impact: Using AI to Optimize Every Application." },
-                    { category: "Job Search Optimization", title: "From Chaos to Clarity: Navigating the Job Market with AI Insights." },
-                    { category: "Job Search Optimization", title: "Application Tracking Made Easy: Staying Organized with AI Assistance." },
-                    { category: "Job Search Optimization", title: "Decoding the Market: What AI Analytics Reveal About Your Job Search." },
-                    { category: "Job Search Optimization", title: "Success Metrics: Measuring Your Job Search Progress with AI." },
-                    { category: "Job Search Optimization", title: "Stay Ahead of the Curve: Leveraging Market Insights for Career Growth." },
-                    { category: "Job Search Optimization", title: "The Future is Here: Embracing AI for Your Ultimate Job Search Success." },
-                    // Professional Resume Writing (Premium Service)
-                    { category: "Resume Writing Services", title: "Invest in Yourself: Why a Professionally Written Resume is Worth It." },
-                    { category: "Resume Writing Services", title: "The ATS Advantage: Crafting a Resume That Beats the Bots." },
-                    { category: "Resume Writing Services", title: "Beyond DIY: The Expertise of Professional Resume Writers." },
-                    { category: "Resume Writing Services", title: "Your Story, Artfully Told: Professional Resumes That Resonate." },
-                    { category: "Resume Writing Services", title: "Industry-Specific Keywords: Making Your Resume Speak the Right Language." },
-                    { category: "Resume Writing Services", title: "The Power of Revisions: Why Expert Feedback Transforms Your Resume." },
-                    { category: "Resume Writing Services", title: "More Than Just a Document: Your Resume as a Marketing Tool." },
-                    { category: "Resume Writing Services", title: "From Good to Unforgettable: Elevating Your Resume with Professional Help." },
-                    { category: "Resume Writing Services", title: "The Perfect Pair: How a Resume and Cover Letter Work Together." },
-                    { category: "Resume Writing Services", title: "Standing Out from the Crowd: The Impact of a Professionally Written Resume." },
-                    // LinkedIn Profile Optimization (Premium Service)
-                    { category: "LinkedIn Optimization", title: "Your Digital Handshake: Why Your LinkedIn Profile is Crucial." },
-                    { category: "LinkedIn Optimization", title: "Beyond a CV: Turning Your LinkedIn into a Powerful Networking Hub." },
-                    { category: "LinkedIn Optimization", title: "Compelling First Impressions: Crafting a Headline That Grabs Attention." },
-                    { category: "LinkedIn Optimization", title: "The Optimized Summary: Telling Your Professional Story on LinkedIn." },
-                    { category: "LinkedIn Optimization", title: "Skills That Sell: Maximizing Your Discoverability on LinkedIn." },
-                    { category: "LinkedIn Optimization", title: "Building Your Network: Strategic Tips for LinkedIn Growth." },
-                    { category: "LinkedIn Optimization", title: "From Passive to Proactive: Leveraging LinkedIn for Job Opportunities." },
-                    { category: "LinkedIn Optimization", title: "The Recruiter's View: What Hiring Managers Look for on LinkedIn." },
-                    { category: "LinkedIn Optimization", title: "Showcasing Your Expertise: Using LinkedIn to Build Your Personal Brand." },
-                    { category: "LinkedIn Optimization", title: "Your Professional Story: Making Your LinkedIn Profile Shine." },
-                    // Mock Interview Sessions (Premium Service)
-                    { category: "Mock Interviews", title: "Conquer Interview Nerves: The Power of Mock Interview Practice." },
-                    { category: "Mock Interviews", title: "Beyond the Questions: Mastering Interview Etiquette and Body Language." },
-                    { category: "Mock Interviews", title: "AI-Powered Feedback: Getting Unbiased Insights on Your Interview Skills." },
-                    { category: "Mock Interviews", title: "The Art of the Answer: Crafting Impactful Responses for Any Interview." },
-                    { category: "Mock Interviews", title: "Industry-Specific Preparation: Tailoring Your Practice to Your Field." },
-                    { category: "Mock Interviews", title: "Behavioral Questions Decoded: Acing 'Tell Me About a Time When...'" },
-                    { category: "Mock Interviews", title: "Your Weaknesses, Your Strengths: Turning Challenges into Opportunities." },
-                    { category: "Mock Interviews", title: "The Follow-Up Advantage: What to Do After Your Mock Interview." },
-                    { category: "Mock Interviews", title: "From Awkward to Awesome: Boosting Your Interview Confidence." },
-                    { category: "Mock Interviews", title: "Ace the Interview, Land the Job: The Benefits of Professional Coaching." },
-                    // General Career Advice & AI Integration
-                    { category: "Career Advice", title: "The AI Revolution in Job Searching: What Every Job Seeker Needs to Know." },
-                    { category: "Career Advice", title: "Embracing Technology: How AI is Changing the Hiring Landscape." },
-                    { category: "Career Advice", title: "Your Career in the Age of AI: Adapting and Thriving." },
-                    { category: "Career Advice", title: "Debunking Myths: What AI Can and Cannot Do for Your Job Search." },
-                    { category: "Career Advice", title: "Human Touch Meets AI Power: The Best of Both Worlds in Career Services." },
-                    { category: "Career Advice", title: "Beyond the Hype: Practical Ways AI Can Help Your Job Search Today." },
-                    { category: "Career Advice", title: "Data-Driven Decisions: How AI Empowers Your Career Choices." },
-                    { category: "Career Advice", title: "The Ethical AI: Ensuring Fairness and Privacy in Job Applications." },
-                    { category: "Career Advice", title: "Lifelong Learning in the AI Era: Upskilling for the Future." },
-                    { category: "Career Advice", title: "Navigating the Job Market of Tomorrow: A Glimpse into AI's Role." },
-                    // Success Stories & Testimonials
-                    { category: "Success Stories", title: "From Struggle to Success: Real Stories of Job Seekers Using Our AI Tools." },
-                    { category: "Success Stories", title: "How Our AI Helped John Land His Dream Role. (Case Study)" },
-                    { category: "Success Stories", title: "The Game Changer: What Our Users Say About Our AI-Powered Services." },
-                    { category: "Success Stories", title: "Before and After: Transforming Careers with Our Professional Services." },
-                    { category: "Success Stories", title: "Testimonial Spotlight: How Sarah Leapt Forward in Her Career." },
-                    { category: "Success Stories", title: "The Proof is in the Placement: Our Success Stories Speak for Themselves." },
-                    { category: "Success Stories", title: "Hear From Our Happy Clients: Why They Chose Our Career Services." },
-                    { category: "Success Stories", title: "Beyond Expectations: Delivering Results for Job Seekers." },
-                    { category: "Success Stories", title: "Your Success Story Starts Here: Join Our Community of Achievers." },
-                    { category: "Success Stories", title: "The Journey to Your Dream Job: Inspired by Our Client Successes." }
-                ];
+                { title: "Complete UI/UX Design Figma Course", category: "UI/UX Design" },
+                { title: "User Experience (UX): The Ultimate Guide to Usability", category: "UI/UX Design" },
+                { title: "Adobe XD UI/UX Design Essentials", category: "UI/UX Design" },
+                { title: "Design Thinking for Beginners", category: "UI/UX Design" },
+                { title: "Mobile App Design from Scratch with Sketch", category: "UI/UX Design" },
+                { title: "Webflow for Beginners: Build a Website Visually", category: "UI/UX Design" },
+                { title: "Creating High-Fidelity Prototypes with ProtoPie", category: "UI/UX Design" },
                 
-                const excerpt = 'Discover insights, strategies, and AI-powered tips to navigate the modern job market and accelerate your career growth.';
+                { title: "Financial Modeling: Build a Complete DCF Valuation Model", category: "Business & Finance" },
+                { title: "The Complete Business Plan Course (Includes 50 Templates)", category: "Business & Finance" },
+                { title: "An Entire MBA in 1 Course: Award Winning Business School Prof", category: "Business & Finance" },
+                { title: "Introduction to Corporate Finance", category: "Business & Finance" },
+                { title: "QuickBooks Online 2024: A Complete Guide", category: "Business & Finance" },
+                { title: "Personal Finance Masterclass", category: "Business & Finance" },
+                { title: "Stock Market Investing for Beginners", category: "Business & Finance" }
+            ];
 
-                const getRandomDate = () => {
-                    const end = new Date();
-                    const start = new Date(end.getFullYear() - 1, end.getMonth(), end.getDate());
-                    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
-                        .toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-                };
+            const courseGrid = document.getElementById('course-grid');
+            const filterContainer = document.getElementById('filter-container');
 
-                let cardsHtml = '';
-                for (let i = 0; i < blogPosts.length; i++) {
-                    const post = blogPosts[i];
-                    const imageUrl = `https://picsum.photos/600/400?random=${i + 1}`;
-                    
-                    cardsHtml += `
-                        <article class="blog-card">
-                            <a href="#" class="blog-card-image">
-                                <img src="${imageUrl}" alt="${post.title}" loading="lazy">
-                            </a>
-                            <div class="blog-card-content">
-                                <span class="blog-card-category">${post.category}</span>
-                                <h3 class="blog-card-title">${post.title}</h3>
-                                <p class="blog-card-excerpt">${excerpt}</p>
-                                <div class="blog-card-footer">
-                                    <span>${getRandomDate()}</span>
-                                    <a href="#" class="read-more-link">Read More →</a>
-                                </div>
-                            </div>
-                        </article>
+            // --- Function to Display Courses ---
+            const displayCourses = (courseList) => {
+                courseGrid.innerHTML = ''; // Clear existing courses
+                courseList.forEach(course => {
+                    const card = document.createElement('div');
+                    card.className = 'course-card';
+                    card.innerHTML = `
+                        <div>
+                            <h3>${course.title}</h3>
+                            <p>${course.category}</p>
+                        </div>
+                        <button class="register-btn">Register</button>
                     `;
-                }
-                blogGrid.innerHTML = cardsHtml;
-            }
+                    courseGrid.appendChild(card);
+                });
+            };
 
-            // --- Efficient Event Handling for "Read More" Links ---
-            blogGrid.addEventListener('click', function(event) {
-                const link = event.target.closest('.read-more-link, .blog-card-image, .blog-card-title');
-                if (link) {
-                    event.preventDefault();
-                    alert('Navigating to the full blog post! (This is a demo)');
-                }
-            });
+            // --- Function to Setup Filters ---
+            const setupFilters = () => {
+                const categories = ['All', ...new Set(courses.map(course => course.category))];
+                
+                categories.forEach(category => {
+                    const button = document.createElement('button');
+                    button.className = 'filter-btn';
+                    button.textContent = category;
+                    button.dataset.filter = category;
+                    if (category === 'All') {
+                        button.classList.add('active');
+                    }
+                    filterContainer.appendChild(button);
+                });
+
+                filterContainer.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('filter-btn')) {
+                        // Update active button
+                        filterContainer.querySelector('.active').classList.remove('active');
+                        e.target.classList.add('active');
+
+                        const filter = e.target.dataset.filter;
+                        const filteredCourses = filter === 'All'
+                            ? courses
+                            : courses.filter(course => course.category === filter);
+                        
+                        displayCourses(filteredCourses);
+                    }
+                });
+            };
+
+            // --- Initial Load ---
+            setupFilters();
+            displayCourses(courses);
         });
     </script>
 
