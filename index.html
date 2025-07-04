@@ -8,7 +8,7 @@
         /* CSS Reset and Basic Setup */
         :root {
             /* Updated Color Theme */
-            --header-footer-bg: #0C2A4D;       /* Dark Blue */
+            --header-footer-bg: #FFFFFF;         /* White */
             --primary-btn-bg: #155B96;         /* Mid Blue */
             --primary-btn-hover-bg: #00B3E6;   /* Sky Blue */
             --section-bg-light: #FFFFFF;
@@ -21,7 +21,7 @@
             
             /* Mapping for easier replacement */
             --primary-blue: var(--primary-btn-bg);
-            --dark-blue: var(--header-footer-bg);
+            --dark-blue: #0C2A4D; /* Kept for specific elements if needed */
             --light-gray: var(--section-bg-dark);
             --text-dark: var(--text-heading);
             --text-light: var(--text-body);
@@ -133,11 +133,11 @@
         
         /* Header */
         .header {
-            background-color: var(--white);
+            background-color: var(--header-footer-bg);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .main-nav {
@@ -173,13 +173,13 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--white);
+            color: var(--text-body);
             font-weight: 500;
-            transition: opacity 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            color: var(--link-highlight);
         }
         
         .nav-btn {
@@ -203,7 +203,7 @@
         #mobile-nav-toggle span {
             width: 30px;
             height: 3px;
-            background: var(--white);
+            background: var(--text-heading);
             border-radius: 10px;
             transition: all 0.3s linear;
             position: relative;
@@ -331,10 +331,10 @@
         .step-card p { font-size: 0.85rem; margin-bottom: 20px; line-height: 1.5; }
         
         .step-card .btn-light-blue {
-            background-color: var(--section-bg-dark);
+            background-color: #e2e8f0;
             color: var(--link-highlight);
             font-weight: 600;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--icon-divider);
             width: 100%;
             font-size: 0.9rem;
             padding: 10px 20px;
@@ -344,7 +344,7 @@
             gap: 8px;
             margin-top: auto;
         }
-        .step-card .btn-light-blue:hover { background-color: #e2e8f0; }
+        .step-card .btn-light-blue:hover { background-color: #d1d5db; }
 
         /* Premium Services Section */
         #services {
@@ -410,10 +410,10 @@
         #why-us h2 { margin-bottom: 15px; }
         #why-us .subtext { max-width: 800px; margin: 0 auto 50px; text-align: center; font-size: 1.05rem;}
         .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .stat-card { background: var(--white); padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .stat-card { background: var(--white); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .stat-card .icon { height: 48px; width: 48px; margin: 0 auto 15px; }
-        .stat-card .number { font-size: 2.5rem; font-weight: 800; color: var(--text-heading); }
-        .stat-card .label { font-size: 1.1rem; color: var(--text-heading); font-weight: 600; }
+        .stat-card .number { font-size: 2.5rem; font-weight: 800; }
+        .stat-card .label { font-size: 1.1rem; font-weight: 600; }
         .stat-card .stat-description { font-size: 0.9rem; margin-top: 8px; line-height: 1.5; }
 
         #advantage { background-color: var(--section-bg-dark); }
@@ -423,8 +423,8 @@
         .advantage-list li { margin-bottom: 25px; padding-left: 30px; position: relative; }
         .advantage-list li::before { content: '•'; position: absolute; left: 0; top: -2px; font-size: 1.5rem; font-weight: bold; color: var(--link-highlight); }
         .advantage-list h3 { font-size: 1.2rem; margin-bottom: 5px; }
-        .advantage-cta-box { background: var(--dark-blue); color: var(--white); padding: 40px; border-radius: 16px; }
-        .advantage-cta-box h2 { color: var(--white); text-align: left; font-size: 2rem; }
+        .advantage-cta-box { background: var(--header-footer-bg); color: var(--white); padding: 40px; border-radius: 16px; }
+        .advantage-cta-box h2 { text-align: left; font-size: 2rem; }
         .advantage-cta-box p { color: var(--icon-divider); margin-bottom: 30px; }
         .advantage-cta-box ul { list-style: none; }
         .advantage-cta-box li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
@@ -446,27 +446,28 @@
         .contact-info .info-card div p:first-child { font-weight: 600; }
         .free-consultation-box { background: var(--primary-blue); padding: 25px; border-radius: 12px; color: var(--white); }
         .free-consultation-box h3 { color: var(--white); font-size: 1.2rem; }
-        .free-consultation-box p { font-size: 0.9rem; color: #a7c8e2; margin-bottom: 20px; }
+        .free-consultation-box p { color: #a7c8e2; margin-bottom: 20px; }
         .free-consultation-box .btn { background: var(--white); color: var(--primary-blue); width: 100%; }
         
         /* Footer */
-        .footer { background-color: var(--header-footer-bg); color: var(--icon-divider); padding: 60px 0 20px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; padding-bottom: 40px; border-bottom: 1px solid #2b4a6c; }
+        .footer { background-color: var(--header-footer-bg); color: var(--text-body); padding: 60px 0 20px; border-top: 1px solid #e2e8f0; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; padding-bottom: 40px; border-bottom: 1px solid var(--icon-divider); }
         
         .footer-about .logo { display: inline-block; margin-bottom: 20px; }
         .footer-about .logo-img { max-width: 150px; }
 
         .footer-about p { font-size: 0.95rem; max-width: 350px; }
         .social-icons { display: flex; gap: 15px; margin-top: 20px; }
-        .social-icons a { color: var(--icon-divider); transition: color 0.3s ease; }
-        .social-icons a:hover { color: var(--white); }
-        .footer-links h3 { color: var(--white); font-size: 1.2rem; margin-bottom: 20px; }
+        .social-icons a { color: var(--text-body); transition: color 0.3s ease; }
+        .social-icons a:hover { color: var(--link-highlight); }
+        .footer-links h3 { color: var(--text-heading); font-size: 1.2rem; margin-bottom: 20px; }
         .footer-links ul { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: var(--icon-divider); text-decoration: none; transition: color 0.3s ease; }
-        .footer-links a:hover { color: var(--white); }
+        .footer-links a { color: var(--text-body); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--link-highlight); }
         .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; font-size: 0.9rem; }
-        .footer-bottom-links a { text-decoration: none; margin-left: 20px; }
+        .footer-bottom-links a { color: var(--text-body); text-decoration: none; margin-left: 20px; }
+        .footer-bottom-links a:hover { color: var(--link-highlight); }
         
         .sticky-footer-banner { display: none; }
 
@@ -520,7 +521,7 @@
         <div class="container">
             <nav class="main-nav">
                 <a href="#" class="nav-logo">
-                    <img src="logo.PNG" alt="ONE JOB Logo" class="logo-img">
+                    <img src="logo.png" alt="ONE JOB Logo" class="logo-img">
                 </a>
                 <div class="nav-menu" id="nav-menu">
                     <ul class="nav-links">
@@ -733,7 +734,7 @@
                     <div class="stat-card">
                         <svg class="icon" style="color:var(--link-highlight);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632" />
                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 12.25V15.5" />
                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 14.25L12 12.25" />
                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 14.25L12 12.25" />
@@ -883,7 +884,7 @@
             <div class="footer-grid">
                 <div class="footer-about">
                     <a href="#" class="logo">
-                        <img src="logo.PNG" alt="ONE JOB Logo" class="logo-img">
+                        <img src="logo.png" alt="ONE JOB Logo" class="logo-img">
                     </a>
                     <p>Revolutionizing careers with AI-powered job search optimization. Your dream job is just one click away.</p>
                     <div class="social-icons">
