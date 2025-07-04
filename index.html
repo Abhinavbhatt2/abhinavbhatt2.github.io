@@ -261,7 +261,7 @@
 
         /* AI Powered Services Section */
         #ai-services {
-            background-color: var(--light-lavender);
+            background-color: var(--white);
         }
         
         .ai-services-grid {
@@ -306,7 +306,7 @@
         
         /* Recommended Way Section */
         #how-it-works {
-            background-color: var(--white);
+            background-color: var(--light-lavender);
         }
         
         .how-it-works-grid {
@@ -355,7 +355,7 @@
 
         /* Premium Services Section */
         #services {
-            background-color: var(--light-gray);
+            background-color: var(--white);
         }
         
         #services .section-subtitle { font-size: 1rem; }
@@ -408,16 +408,21 @@
         .service-card:not(.popular) .btn { background-color: var(--dark-blue); color: var(--white); }
         
         /* Other Sections */
-        .custom-solutions { text-align: center; padding: 40px 0; background-color: var(--white); }
+        .custom-solutions { text-align: center; padding: 40px 0; background-color: var(--light-gray); }
         .custom-solutions .btn-secondary { border-width: 2px; padding: 14px 32px; }
+        
+        /* Why Us Section - UPDATED STYLES */
         #why-us { background-color: var(--light-lavender); }
-        #why-us .section-subtitle { display: block; text-align: center; margin-bottom: 10px; color: var(--primary-blue); font-weight: 600; }
-        #why-us .subtext { max-width: 800px; margin: 0 auto 50px; text-align: center; }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        #why-us .section-subtitle-small { display: block; text-align: center; margin-bottom: 10px; color: var(--primary-blue); font-weight: 600; font-size: 1rem; }
+        #why-us h2 { margin-bottom: 15px; }
+        #why-us .subtext { max-width: 800px; margin: 0 auto 50px; text-align: center; font-size: 1.05rem;}
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .stat-card { background: var(--white); padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .stat-card .icon { height: 48px; width: 48px; margin: 0 auto 15px; }
-        .stat-card .number { font-size: 2.5rem; font-weight: 700; color: var(--text-dark); }
-        .stat-card .label { font-size: 1rem; color: var(--text-light); }
+        .stat-card .number { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); }
+        .stat-card .label { font-size: 1.1rem; color: var(--text-dark); font-weight: 600; }
+        .stat-card .stat-description { font-size: 0.9rem; color: var(--text-light); margin-top: 8px; line-height: 1.5; }
+
         .advantage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .advantage-list h2 { text-align: left; }
         .advantage-list ul { list-style: none; margin-top: 30px; }
@@ -471,12 +476,8 @@
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .services-grid, .ai-services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .how-it-works-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+            .services-grid, .ai-services-grid { grid-template-columns: repeat(2, 1fr); }
+            .how-it-works-grid { grid-template-columns: repeat(3, 1fr); }
         }
         
         @media (max-width: 992px) {
@@ -504,7 +505,6 @@
             h2 { font-size: 2rem; }
             .hero-buttons { flex-direction: column; align-items: center; }
             .hero-feature-card { width: 100%; }
-            .how-it-works-grid { grid-template-columns: 1fr; }
             .form-row { flex-direction: column; }
             .contact-wrapper { padding: 30px 20px; }
             .footer-bottom { flex-direction: column; gap: 10px; }
@@ -579,7 +579,6 @@
             </div>
         </section>
         
-        <!-- NEW SECTION: AI POWERED SERVICES -->
         <section id="ai-services">
             <div class="container">
                 <h2><span>AI Powered</span> Services</h2>
@@ -616,7 +615,6 @@
             </div>
         </section>
         
-        <!-- NEW SECTION: RECOMMENDED WAY -->
         <section id="how-it-works">
             <div class="container">
                 <h2><span>Recommended way</span> to use ONEJOB AI Tool</h2>
@@ -664,14 +662,12 @@
             </div>
         </section>
 
-        <!-- PREMIUM SERVICES SECTION -->
         <section id="services">
             <div class="container">
                 <h2>Our <span>Premium Services</span></h2>
-                <p class="section-subtitle" style="font-size: 1rem;">Comprehensive career solutions designed to accelerate your job search and maximize your success rate</p>
+                <p class="section-subtitle">Comprehensive career solutions designed to accelerate your job search and maximize your success rate</p>
                 <div class="services-grid">
-                    <!-- Cards remain the same -->
-                    <div class="service-card popular">
+                     <div class="service-card popular">
                         <div class="most-popular-badge">Most Popular</div>
                         <svg class="icon" style="color: var(--primary-blue);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
                         <h3>AI-Powered Job Search Optimization</h3>
@@ -734,31 +730,30 @@
             </div>
         </section>
 
+        <!-- UPDATED 'WHY CHOOSE US' SECTION -->
         <section id="why-us">
             <div class="container">
-                <p class="section-subtitle">Why Choose ONE JOB</p>
+                <p class="section-subtitle-small">Why Choose ONE JOB</p>
                 <h2>Revolutionizing Career Success with <span>AI</span></h2>
                 <p class="subtext">We combine cutting-edge artificial intelligence with human expertise to deliver unparalleled job search optimization. Our platform doesn't just find jobs – it transforms careers.</p>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <svg class="icon" style="color:#3b82f6;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m-7.512 2.72a9.094 9.094 0 0 1 3.741-.479 3 3 0 0 1-4.682-2.72M12 18.72v-5.25A2.25 2.25 0 0 1 14.25 11.25h1.5A2.25 2.25 0 0 1 18 13.5v5.25m-6-5.25v5.25A2.25 2.25 0 0 0 8.25 11.25h-1.5A2.25 2.25 0 0 0 4.5 13.5v5.25m15-7.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm-9 0a4.5 4.5 0 1 0-9 0 4.5 4.5 0 0 0 9 0Z" /></svg>
-                        <p class="number">10,000+</p>
-                        <p class="label">Job Seekers Helped</p>
+                        <svg class="icon" style="color:#3b82f6;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 3 3-3 3" /></svg>
+                        <p class="number">2X</p>
+                        <p class="label">More Interview Calls</p>
+                        <p class="stat-description">Our AI tools are engineered to double your interview opportunities and get your profile noticed.</p>
                     </div>
                     <div class="stat-card">
-                         <svg class="icon" style="color:#10b981;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" /></svg>
-                        <p class="number">85%</p>
-                        <p class="label">Success Rate</p>
+                         <svg class="icon" style="color:#10b981;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /><path d="M19.5 13.5L18 12" stroke-linecap="round"/></svg>
+                        <p class="number"><60s</p>
+                        <p class="label">ATS-Friendly Resume</p>
+                        <p class="stat-description">Generate a professional, ATS-optimized resume in under sixty seconds and apply faster.</p>
                     </div>
                     <div class="stat-card">
-                         <svg class="icon" style="color:#8b5cf6;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 1 0 0-13.5h9a9.75 9.75 0 1 0 0 13.5ZM16.5 7.5h.008v.008h-.008V7.5Z" /></svg>
-                        <p class="number">500+</p>
-                        <p class="label">Partner Companies</p>
-                    </div>
-                    <div class="stat-card">
-                         <svg class="icon" style="color:#f97316;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
-                        <p class="number">30%</p>
-                        <p class="label">Faster Job Placement</p>
+                         <svg class="icon" style="color:#8b5cf6;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 1 0 0-13.5h9a9.75 9.75 0 1 0 0 13.5ZM9 13.5l3 3m0 0 3-3m-3 3v-6m0 1.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0" /></svg>
+                        <p class="number">3+</p>
+                        <p class="label">Free Certificates</p>
+                        <p class="stat-description">Enhance your resume and showcase your skills with over 3 free, domain-specific certificates.</p>
                     </div>
                 </div>
             </div>
