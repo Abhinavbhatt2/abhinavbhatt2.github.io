@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - ONEJOB AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-blue: #1d679e;
+            --light-blue: #3b82f6;
+            --dark-text: #1f2937;
+            --body-text: #4b5563;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--dark-text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header Styles --- */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--dark-text);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            color: var(--primary-blue);
+            font-size: 28px;
+            margin-right: 8px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--body-text);
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+        
+        nav a.active {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 4px;
+        }
+
+        .nav-button {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #17507b;
+            color: var(--white);
+        }
+
+        /* --- Certificate Section Styles --- */
+        #certificates-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            text-align: center;
+            color: var(--body-text);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Filter Styles --- */
+        #filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background-color: var(--white);
+            color: var(--body-text);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        /* --- Course Grid Styles --- */
+        #course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .course-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+
+        .course-card p {
+            font-size: 14px;
+            color: var(--light-blue);
+            font-weight: 600;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Pushes button to the bottom */
+        }
+
+        .register-btn {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .register-btn:hover {
+            background-color: #17507b;
+        }
+        
+        /* --- Responsive Styles --- */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Simple hiding for mobile demo */
+            }
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">∞</span> ONE JOB
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#" class="active">Certificates</a></li>
+                    <li><a href="#" class="nav-button">ONEJOB AI Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Certificate Section -->
+    <main id="certificates-section">
+        <div class="container">
+            <h1 class="section-title">Explore Our Certificate Courses</h1>
+            <p class="section-subtitle">
+                Enhance your skills and boost your resume with industry-recognized certifications.
+                Filter by category to find the perfect course for your career path.
+            </p>
+
+            <!-- Filter Buttons -->
+            <div id="filter-container">
+                <!-- Filter buttons will be generated by JavaScript -->
+            </div>
+
+            <!-- Course Grid -->
+            <div id="course-grid">
+                <!-- Course cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Course Data ---
+            const courses = [
+                { title: "Python for Data Science and Machine Learning", category: "Data Science" },
+                { title: "Tableau 2024 A-Z: Hands-On Tableau Training", category: "Data Science" },
+                { title: "Machine Learning A-Z™: AI, Python & R", category: "Data Science" },
+                { title: "SQL for Data Science: Master SQL for Data Analysis", category: "Data Science" },
+                { title: "Deep Learning Specialization", category: "Data Science" },
+                { title: "Power BI: A-Z for Data Analytics", category: "Data Science" },
+                { title: "R Programming A-Z™: R For Data Science", category: "Data Science" },
+
+                { title: "The Complete 2024 Web Development Bootcamp", category: "Web Development" },
+                { title: "JavaScript: The Advanced Concepts", category: "Web Development" },
+                { title: "React - The Complete Guide (incl Hooks, React Router, Redux)", category: "Web Development" },
+                { title: "Node.js, Express, MongoDB & More: The Complete Bootcamp", category: "Web Development" },
+                { title: "Full-Stack Web Development with Python (Flask & Django)", category: "Web Development" },
+                { title: "Vue - The Complete Guide (w/ Router, Vuex & Composition API)", category: "Web Development" },
+                { title: "Modern HTML & CSS From The Beginning (Sass, Flexbox, Grid)", category: "Web Development" },
+
+                { title: "Digital Marketing Masterclass - 23 Courses in 1", category: "Digital Marketing" },
+                { title: "The Complete SEO Training Masterclass", category: "Digital Marketing" },
+                { title: "Social Media Marketing - SMM Strategy", category: "Digital Marketing" },
+                { title: "Google Ads for Beginners 2024", category: "Digital Marketing" },
+                { title: "Content Marketing Masterclass: Create Content That Sells", category: "Digital Marketing" },
+                { title: "Email Marketing: Start & Grow Your Business", category: "Digital Marketing" },
+                { title: "YouTube Masterclass: Your Guide to YouTube Success", category: "Digital Marketing" },
+
+                { title: "Project Management Professional (PMP) Exam Prep", category: "Project Management" },
+                { title:_blank" },
+                { title: "Certified ScrumMaster (CSM) - Agile Scrum Training", category: "Project Management" },
+                { title: "Agile Crash Course: Agile Project Management", category: "Project Management" },
+                { title: "Jira for Beginners: A Complete Guide", category: "Project Management" },
+                { title: "Risk Management for Projects", category: "Project Management" },
+                { title: "PRINCE2® Foundation Certification Training", category: "Project Management" },
+                { title: "Lean Six Sigma White Belt Certification", category: "Project Management" },
+
+                { title: "The Complete Cyber Security Course: Hackers Exposed!", category: "Cybersecurity" },
+                { title: "CompTIA Security+ (SY0-601) Complete Course & Exam", category: "Cybersecurity" },
+                { title: "Ethical Hacking: From Scratch to Advanced", category: "Cybersecurity" },
+                { title: "Network Security & Firewalls", category: "Cybersecurity" },
+                { title: "CISSP - Certified Information Systems Security Professional", category: "Cybersecurity" },
+                { title: "Cyber Security for Absolute Beginners", category: "Cybersecurity" },
+                { title: "Penetration Testing & Bug Bounty Hunting", category: "Cybersecurity" },
+
+                { title: "AWS Certified Solutions Architect - Associate", category: "Cloud Computing" },
+                { title: "Microsoft Azure Administrator (AZ-104)", category: "Cloud Computing" },
+                { title: "Google Cloud Professional Cloud Architect", category: "Cloud Computing" },
+                { title: "Docker and Kubernetes: The Complete Guide", category: "Cloud Computing" },
+                { title: "Terraform for the Absolute Beginners with Labs", category: "Cloud Computing" },
+                { title: "AWS Certified Cloud Practitioner CLF-C01", category: "Cloud Computing" },
+                { title: "Serverless Computing with AWS Lambda", category: "Cloud Computing" },
+                
+                { title: "Complete UI/UX Design Figma Course", category: "UI/UX Design" },
+                { title: "User Experience (UX): The Ultimate Guide to Usability", category: "UI/UX Design" },
+                { title: "Adobe XD UI/UX Design Essentials", category: "UI/UX Design" },
+                { title: "Design Thinking for Beginners", category: "UI/UX Design" },
+                { title: "Mobile App Design from Scratch with Sketch", category: "UI/UX Design" },
+                { title: "Webflow for Beginners: Build a Website Visually", category: "UI/UX Design" },
+                { title: "Creating High-Fidelity Prototypes with ProtoPie", category: "UI/UX Design" },
+                
+                { title: "Financial Modeling: Build a Complete DCF Valuation Model", category: "Business & Finance" },
+                { title: "The Complete Business Plan Course (Includes 50 Templates)", category: "Business & Finance" },
+                { title: "An Entire MBA in 1 Course: Award Winning Business School Prof", category: "Business & Finance" },
+                { title: "Introduction to Corporate Finance", category: "Business & Finance" },
+                { title: "QuickBooks Online 2024: A Complete Guide", category: "Business & Finance" },
+                { title: "Personal Finance Masterclass", category: "Business & Finance" },
+                { title: "Stock Market Investing for Beginners", category: "Business & Finance" }
+            ];
+
+            const courseGrid = document.getElementById('course-grid');
+            const filterContainer = document.getElementById('filter-container');
+
+            // --- Function to Display Courses ---
+            const displayCourses = (courseList) => {
+                courseGrid.innerHTML = ''; // Clear existing courses
+                courseList.forEach(course => {
+                    const card = document.createElement('div');
+                    card.className = 'course-card';
+                    card.innerHTML = `
+                        <div>
+                            <h3>${course.title}</h3>
+                            <p>${course.category}</p>
+                        </div>
+                        <button class="register-btn">Register</button>
+                    `;
+                    courseGrid.appendChild(card);
+                });
+            };
+
+            // --- Function to Setup Filters ---
+            const setupFilters = () => {
+                const categories = ['All', ...new Set(courses.map(course => course.category))];
+                
+                categories.forEach(category => {
+                    const button = document.createElement('button');
+                    button.className = 'filter-btn';
+                    button.textContent = category;
+                    button.dataset.filter = category;
+                    if (category === 'All') {
+                        button.classList.add('active');
+                    }
+                    filterContainer.appendChild(button);
+                });
+
+                filterContainer.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('filter-btn')) {
+                        // Update active button
+                        filterContainer.querySelector('.active').classList.remove('active');
+                        e.target.classList.add('active');
+
+                        const filter = e.target.dataset.filter;
+                        const filteredCourses = filter === 'All'
+                            ? courses
+                            : courses.filter(course => course.category === filter);
+                        
+                        displayCourses(filteredCourses);
+                    }
+                });
+            };
+
+            // --- Initial Load ---
+            setupFilters();
+            displayCourses(courses);
+        });
+    </script>
+
+</body>
+</html>
