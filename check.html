@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificates - ONEJOB AI</title>
-    <!-- (4) Updated Meta Logo (Favicon) -->
     <link rel="icon" href="https://getonejob.in/logo.PNG" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +12,7 @@
         /* --- Global Styles & Variables --- */
         :root {
             --primary-blue: #1d679e;
+            --dark-blue-footer: #1a3652;
             --light-blue: #3b82f6;
             --dark-text: #1f2937;
             --body-text: #4b5563;
@@ -20,230 +20,92 @@
             --border-color: #e5e7eb;
             --white: #ffffff;
             --green-free: #10b981;
+            --footer-text-light: #cdd6e0;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--white);
-            color: var(--dark-text);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- Header Styles --- */
-        header {
-            background-color: var(--white);
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 0;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* (4) Updated Logo Style */
-        .logo img {
-            height: 35px;
-            width: auto;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--body-text);
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--primary-blue);
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--white); color: var(--dark-text); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
-        nav a.active {
-            color: var(--primary-blue);
-            border-bottom: 2px solid var(--primary-blue);
-            padding-bottom: 4px;
-        }
-
-        .nav-button {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-button:hover {
-            background-color: #17507b;
-            color: var(--white);
-        }
+        /* --- Header Styles --- */
+        header { background-color: var(--white); border-bottom: 1px solid var(--border-color); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 35px; width: auto; }
+        nav ul { list-style: none; display: flex; align-items: center; gap: 30px; margin:0; padding:0; }
+        nav a { text-decoration: none; color: var(--body-text); font-weight: 600; font-size: 16px; transition: color 0.3s ease; }
+        nav a:hover { color: var(--primary-blue); }
+        nav a.active { color: var(--primary-blue); border-bottom: 2px solid var(--primary-blue); padding-bottom: 4px; }
+        .nav-button { background-color: var(--primary-blue); color: var(--white); padding: 10px 20px; border-radius: 8px; font-weight: 600; transition: background-color 0.3s ease; }
+        .nav-button:hover { background-color: #17507b; color: var(--white); }
 
         /* --- Certificate Section Styles --- */
-        #certificates-section {
-            padding: 60px 0;
-            background-color: var(--bg-light);
-        }
+        #certificates-section { padding: 60px 0; background-color: var(--bg-light); }
+        .section-title { font-size: 42px; font-weight: 700; text-align: center; margin-bottom: 20px; color: var(--dark-text); }
+        .section-subtitle { font-size: 18px; text-align: center; color: var(--body-text); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        #filter-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 50px; }
+        .filter-btn { background-color: var(--white); color: var(--body-text); border: 1px solid var(--border-color); padding: 10px 20px; border-radius: 20px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .filter-btn:hover { background-color: #eef2ff; color: var(--primary-blue); border-color: var(--primary-blue); }
+        .filter-btn.active { background-color: var(--primary-blue); color: var(--white); border-color: var(--primary-blue); }
+        #course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        .course-card { background-color: var(--white); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .course-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .card-top { flex-grow: 1; }
+        .course-card h3 { font-size: 19px; font-weight: 600; color: var(--dark-text); margin-bottom: 8px; }
+        .course-category { font-size: 13px; font-weight: 500; color: var(--light-blue); display: inline-block; margin-bottom: 20px; background-color: #eff6ff; padding: 3px 8px; border-radius: 12px; }
+        .price-info { margin-bottom: 20px; font-size: 14px; }
+        .price-info .free-tag { font-size: 18px; font-weight: 700; color: var(--green-free); }
+        .price-info .exam-fee { display: block; font-weight: 600; color: var(--dark-text); }
+        .price-info .material-fee { display: block; font-size: 12px; color: var(--body-text); }
+        .register-btn { background-color: var(--primary-blue); color: var(--white); padding: 12px 20px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; text-align: center; transition: background-color 0.3s ease; width: 100%; }
+        .register-btn:hover { background-color: #17507b; }
 
-        .section-title {
-            font-size: 42px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 20px;
-            color: var(--dark-text);
-        }
-        
-        .section-subtitle {
-            font-size: 18px;
-            text-align: center;
-            color: var(--body-text);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
+        /* (1) Registration Modal Styles */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .modal-overlay.visible { opacity: 1; visibility: visible; }
+        .modal-content { background-color: var(--white); padding: 30px 40px; border-radius: 12px; width: 90%; max-width: 500px; position: relative; transform: translateY(-50px); transition: transform 0.3s ease; }
+        .modal-overlay.visible .modal-content { transform: translateY(0); }
+        .modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 28px; color: var(--body-text); cursor: pointer; }
+        .modal-content h2 { margin-top: 0; margin-bottom: 10px; font-size: 24px; color: var(--dark-text); }
+        .modal-content p { margin-bottom: 25px; color: var(--body-text); }
+        #registrationForm label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 14px; }
+        #registrationForm input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 16px; }
+        #registrationForm input#courseNameInput { background-color: #f3f4f6; cursor: not-allowed; }
+        #registrationForm button { width: 100%; padding: 14px; background-color: var(--primary-blue); color: var(--white); border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; }
+        #registrationForm button:hover { background-color: #17507b; }
+        #registrationForm button:disabled { background-color: #9ca3af; cursor: not-allowed; }
+        .form-message { text-align: center; margin-top: 15px; font-weight: 600; padding: 10px; border-radius: 8px; display: none; }
+        .form-message.success { background-color: #d1fae5; color: #065f46; }
+        .form-message.error { background-color: #fee2e2; color: #991b1b; }
 
-        /* --- Filter Styles --- */
-        #filter-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 50px;
-        }
+        /* (2) Footer Styles */
+        .site-footer { background-color: var(--dark-blue-footer); color: var(--footer-text-light); padding: 60px 0 20px 0; }
+        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-about .footer-logo-box { background-color: var(--white); display: inline-block; padding: 10px; border-radius: 8px; margin-bottom: 20px; }
+        .footer-about .footer-logo-box img { height: 40px; display: block; }
+        .footer-about p { font-size: 15px; line-height: 1.7; max-width: 350px; }
+        .social-icons { display: flex; gap: 15px; margin-top: 20px; }
+        .social-icons a { color: var(--footer-text-light); transition: color 0.3s ease; }
+        .social-icons a:hover { color: var(--white); }
+        .social-icons svg { width: 24px; height: 24px; }
+        .footer-links h3 { color: var(--white); font-size: 18px; margin-bottom: 20px; }
+        .footer-links ul { list-style: none; padding: 0; margin: 0; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { text-decoration: none; color: var(--footer-text-light); transition: color 0.3s ease; font-size: 15px; }
+        .footer-links a:hover { color: var(--white); text-decoration: underline; }
+        .footer-bottom { border-top: 1px solid #2d4c6b; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .footer-legal a { color: var(--footer-text-light); text-decoration: none; margin-left: 20px; transition: color 0.3s ease; }
+        .footer-legal a:hover { color: var(--white); }
 
-        .filter-btn {
-            background-color: var(--white);
-            color: var(--body-text);
-            border: 1px solid var(--border-color);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+            .footer-top { grid-template-columns: 1fr 1fr; }
+            .footer-about { grid-column: span 2; }
         }
-
-        .filter-btn:hover {
-            background-color: #eef2ff;
-            color: var(--primary-blue);
-            border-color: var(--primary-blue);
-        }
-
-        .filter-btn.active {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            border-color: var(--primary-blue);
-        }
-
-        /* --- Course Grid Styles --- */
-        #course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .course-card {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        .card-top {
-            flex-grow: 1;
-        }
-
-        .course-card h3 {
-            font-size: 19px;
-            font-weight: 600;
-            color: var(--dark-text);
-            margin-bottom: 8px;
-        }
-
-        .course-category {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--light-blue);
-            display: inline-block;
-            margin-bottom: 20px;
-            background-color: #eff6ff;
-            padding: 3px 8px;
-            border-radius: 12px;
-        }
-
-        .price-info {
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .price-info .free-tag {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--green-free);
-        }
-
-        .price-info .exam-fee {
-            display: block;
-            font-weight: 600;
-            color: var(--dark-text);
-        }
-
-        .price-info .material-fee {
-            display: block;
-            font-size: 12px;
-            color: var(--body-text);
-        }
-
-        .register-btn {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-
-        .register-btn:hover {
-            background-color: #17507b;
-        }
-        
         @media (max-width: 768px) {
             nav ul { display: none; }
             .section-title { font-size: 32px; }
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-about { grid-column: span 1; }
+            .footer-bottom { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -251,10 +113,7 @@
 
     <header>
         <div class="container nav-container">
-             <!-- (4) Updated Header Logo -->
-            <a href="#" class="logo">
-                <img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo">
-            </a>
+            <a href="#" class="logo"> <img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo"> </a>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -270,153 +129,208 @@
     <main id="certificates-section">
         <div class="container">
             <h1 class="section-title">Explore Our Certificate Courses</h1>
-            <p class="section-subtitle">
-                Enhance your skills and boost your resume with industry-recognized certifications. Filter by category to find the perfect course for your career path.
-            </p>
-
+            <p class="section-subtitle">Enhance your skills and boost your resume with industry-recognized certifications. Filter by category to find the perfect course for your career path.</p>
             <div id="filter-container"></div>
             <div id="course-grid"></div>
         </div>
     </main>
 
+    <!-- (2) Footer HTML Structure -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-about">
+                    <div class="footer-logo-box">
+                        <img src="https://getonejob.in/logo.PNG" alt="ONE JOB Logo">
+                    </div>
+                    <p>Revolutionizing careers with AI-powered job search optimization. Your dream job is just one click away.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"> <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg> </a>
+                        <a href="#" aria-label="Twitter"> <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733a4.67 4.67 0 0 0 2.048-2.578 9.3 9.3 0 0 1-2.958 1.13a4.66 4.66 0 0 0-7.938 4.25 13.229 13.229 0 0 1-9.602-4.868c-.337.578-.53 1.248-.53 1.95 0 1.616.823 3.043 2.072 3.878a4.627 4.627 0 0 1-2.1-.58v.06a4.659 4.659 0 0 0 3.737 4.568 4.692 4.692 0 0 1-2.093.08a4.656 4.656 0 0 0 4.342 3.234 9.348 9.348 0 0 1-5.786 1.995c-.376 0-.747-.022-1.112-.065a13.175 13.175 0 0 0 7.14 2.093c8.57 0 13.255-7.098 13.255-13.254 0-.202-.005-.403-.014-.602a9.454 9.454 0 0 0 2.323-2.41z"></path></svg> </a>
+                        <a href="#" aria-label="LinkedIn"> <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.77-17.433H3.567v14h3.54V9h-3.54z"></path></svg> </a>
+                        <a href="#" aria-label="Instagram"> <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.11 0-3.467.011-4.69.068-2.177.1-3.391 1.31-3.49 3.49-.057 1.225-.067 1.573-.067 4.691s.01 3.466.067 4.69c.1 2.178 1.313 3.391 3.49 3.49 1.223.056 1.58.067 4.69.067s3.467-.011 4.69-.067c2.177-.1 3.391-1.312 3.49-3.49.057-1.225.067-1.573.067-4.69s-.01-3.466-.067-4.69c-.1-2.178-1.313-3.391-3.49-3.49-1.223-.056-1.58-.067-4.69-.067zM12 6.873c-2.849 0-5.151 2.302-5.151 5.127s2.302 5.127 5.151 5.127 5.151-2.302 5.151-5.127-2.302-5.127-5.151-5.127zm0 8.452c-1.838 0-3.325-1.487-3.325-3.325s1.487-3.325 3.325-3.325 3.325 1.487 3.325 3.325-1.487 3.325-3.325 3.325zm6.406-9.336c-.783 0-1.419.636-1.419 1.419s.636 1.419 1.419 1.419 1.419-.636 1.419-1.419-.636-1.419-1.419-1.419z"></path></svg> </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">AI Job Search</a></li>
+                        <li><a href="#">Resume Writing</a></li>
+                        <li><a href="#">LinkedIn Optimization</a></li>
+                        <li><a href="#">Mock Interviews</a></li>
+                        <li><a href="#">Custom Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Career Tips</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">© 2024 ONE. JOB. All rights reserved.</div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- (1) Registration Modal HTML -->
+    <div id="registerModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <h2>Register for Course</h2>
+            <p>Please fill out the form below to enroll. We'll get in touch with you shortly.</p>
+            <form id="registrationForm">
+                <label for="courseNameInput">Selected Course</label>
+                <input type="text" id="courseNameInput" name="course" readonly>
+                
+                <label for="nameInput">Full Name</label>
+                <input type="text" id="nameInput" name="name" required>
+                
+                <label for="emailInput">Email Address</label>
+                <input type="email" id="emailInput" name="email" required>
+                
+                <label for="contactInput">Contact Number</label>
+                <input type="tel" id="contactInput" name="contact" required>
+                
+                <button type="submit" id="submitBtn">Register Now</button>
+                <div id="formMessage" class="form-message"></div>
+            </form>
+        </div>
+    </div>
+
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // (2) & (3) Updated course list with new data and categories
+            // --- IMPORTANT ---
+            // Paste your Google Apps Script Web App URL here
+            const googleSheetUrl = 'YOUR_GOOGLE_SHEET_URL_HERE';
+
             const courses = [
-                { title: "Mastering Data Analytics for Business Growth", category: "Business & Operations", type: "Paid" },
-                { title: "DevOps Foundations & Automation", category: "IT & Technology", type: "Paid" },
-                { title: "Complete CAD Design & Modeling Bootcamp", category: "Design & Engineering", type: "Paid" },
-                { title: "ERP Integration for Digital Enterprises", category: "Business Systems", type: "Paid" },
-                { title: "Advanced HRIS Management Tools & Techniques", category: "Human Resources", type: "Paid" },
-                { title: "Accounting Principles for Decision Making", category: "Finance & Accounting", type: "Paid" },
-                { title: "Building Systems Management Essentials", category: "Business & Operations", type: "Paid" },
-                { title: "Business Intelligence with Real-Time Dashboards", category: "Business & Operations", type: "Paid" },
-                { title: "Advanced SEO/SEM Marketing Strategies", category: "Marketing & Sales", type: "Paid" },
-                { title: "Cloud Infrastructure & Management", category: "IT & Technology", type: "Paid" },
-                { title: "Compliance Tracking & Audit Readiness", category: "Legal & Compliance", type: "Paid" },
-                { title: "Content Management Systems (CMS) Mastery", category: "IT & Technology", type: "Paid" },
-                { title: "Contract Management & Lifecycle Automation", category: "Legal & Compliance", type: "Paid" },
-                { title: "Contract Negotiation Strategies for Professionals", category: "Legal & Compliance", type: "Paid" },
-                { title: "Customer Feedback Analytics for Product Improvement", category: "Marketing & Sales", type: "Paid" },
-                { title: "Legal Research & Documentation Skills", category: "Legal & Compliance", type: "Paid" },
-                { title: "Cybersecurity Fundamentals for Non-Tech Roles", category: "IT & Technology", type: "Paid" },
-                { title: "Data Analysis with Python and Excel", category: "Business & Operations", type: "Paid" },
-                { title: "Data Privacy Management & GDPR Compliance", category: "Legal & Compliance", type: "Paid" },
-                { title: "Data Visualization using Tableau & Power BI", category: "Business & Operations", type: "Paid" },
-                { title: "Database Management with SQL & NoSQL", category: "IT & Technology", type: "Paid" },
-                { title: "Email Marketing Campaigns That Convert", category: "Marketing & Sales", type: "Paid" },
-                { title: "CRM Management for Sales & Support Teams", category: "Marketing & Sales", type: "Paid" },
-                { title: "Employee Engagement Analytics with Surveys", category: "Human Resources", type: "Paid" },
-                { title: "Graphic Design for Non-Designers", category: "Design & Engineering", type: "Paid" },
-                { title: "Inventory Tracking Systems & Tools", category: "Business & Operations", type: "Paid" },
-                { title: "Knowledge Base Creation & Management", category: "Business Systems", type: "Paid" },
-                { title: "Lab Management for Research & Testing Environments", category: "Business & Operations", type: "Paid" },
-                { title: "Live Chat Support Excellence", category: "Marketing & Sales", type: "Paid" },
-                { title: "Logistics Planning for Supply Chain Success", category: "Business & Operations", type: "Paid" },
-                { title: "Marketing Automation Tools & Tactics", category: "Marketing & Sales", type: "Paid" },
-                { title: "Network Administration for Modern IT Systems", category: "IT & Technology", type: "Paid" },
-                { title: "Operations Analytics with Real-World Case Studies", category: "Business & Operations", type: "Paid" },
-                { title: "Programming Essentials for Non-Coders", category: "IT & Technology", type: "Paid" },
-                { title: "Payroll Processing: Tools, Laws, and Compliance", category: "Human Resources", type: "Paid" },
-                { title: "Pipeline Management for B2B Sales Teams", category: "Marketing & Sales", type: "Paid" },
-                { title: "Business Process Analysis & Optimization", category: "Business & Operations", type: "Paid" },
-                { title: "Project Management with Asana & MS Project", category: "Business & Operations", type: "Paid" },
-                { title: "Rapid Prototyping with Figma & Adobe XD", category: "Design & Engineering", type: "Paid" },
-                { title: "AI-Powered Recruitment Automation", category: "Human Resources", type: "Paid" },
-                { title: "Financial Modeling for Valuation & Strategy", category: "Finance & Accounting", type: "Paid" },
-                { title: "Risk Analysis for Financial & Operational Planning", category: "Finance & Accounting", type: "Paid" },
-                { title: "Facility Management: Tools, Safety & Compliance", category: "Business & Operations", type: "Paid" },
-                { title: "Safety Compliance and Workplace Regulation Training", category: "Legal & Compliance", type: "Paid" },
-                { title: "Procurement Management & Vendor Strategy", category: "Business & Operations", type: "Paid" },
-                { title: "Sales Analytics with CRM Tools", category: "Marketing & Sales", type: "Paid" },
-                { title: "Sales Automation for High-Performance Teams", category: "Marketing & Sales", type: "Paid" },
-                { title: "Strategic Forecasting & Simulation Techniques", category: "Finance & Accounting", type: "Paid" },
-                { title: "Getting Started with CRM Tools: Salesforce Essentials", category: "Free Courses", type: "Free" },
-                { title: "Email Outreach Basics: From Strategy to Execution", category: "Free Courses", type: "Free" },
-                { title: "Excel for Beginners: Formulas, Charts & More", category: "Free Courses", type: "Free" },
-                { title: "Intro to Financial Modeling with Spreadsheets", category: "Free Courses", type: "Free" },
-                { title: "SAP Fundamentals for Business Professionals", category: "Free Courses", type: "Free" },
-                { title: "Tally Accounting Basics for Small Business", category: "Free Courses", type: "Free" },
-                { title: "Microsoft Office Essentials: Word, Excel, PowerPoint", category: "Free Courses", type: "Free" },
-                { title: "Payroll & Compliance Basics for HR Beginners", category: "Free Courses", type: "Free" },
-                { title: "Digital Marketing: SEO & Social Media Starter Kit", category: "Free Courses", type: "Free" },
-                { title: "Understanding Accounting Principles Made Easy", category: "Free Courses", type: "Free" }
+                { title: "Mastering Data Analytics for Business Growth", category: "Business & Operations", type: "Paid" }, { title: "DevOps Foundations & Automation", category: "IT & Technology", type: "Paid" }, { title: "Complete CAD Design & Modeling Bootcamp", category: "Design & Engineering", type: "Paid" }, { title: "ERP Integration for Digital Enterprises", category: "Business Systems", type: "Paid" }, { title: "Advanced HRIS Management Tools & Techniques", category: "Human Resources", type: "Paid" }, { title: "Accounting Principles for Decision Making", category: "Finance & Accounting", type: "Paid" }, { title: "Building Systems Management Essentials", category: "Business & Operations", type: "Paid" }, { title: "Business Intelligence with Real-Time Dashboards", category: "Business & Operations", type: "Paid" }, { title: "Advanced SEO/SEM Marketing Strategies", category: "Marketing & Sales", type: "Paid" }, { title: "Cloud Infrastructure & Management", category: "IT & Technology", type: "Paid" }, { title: "Compliance Tracking & Audit Readiness", category: "Legal & Compliance", type: "Paid" }, { title: "Content Management Systems (CMS) Mastery", category: "IT & Technology", type: "Paid" }, { title: "Contract Management & Lifecycle Automation", category: "Legal & Compliance", type: "Paid" }, { title: "Contract Negotiation Strategies for Professionals", category: "Legal & Compliance", type: "Paid" }, { title: "Customer Feedback Analytics for Product Improvement", category: "Marketing & Sales", type: "Paid" }, { title: "Legal Research & Documentation Skills", category: "Legal & Compliance", type: "Paid" }, { title: "Cybersecurity Fundamentals for Non-Tech Roles", category: "IT & Technology", type: "Paid" }, { title: "Data Analysis with Python and Excel", category: "Business & Operations", type: "Paid" }, { title: "Data Privacy Management & GDPR Compliance", category: "Legal & Compliance", type: "Paid" }, { title: "Data Visualization using Tableau & Power BI", category: "Business & Operations", type: "Paid" }, { title: "Database Management with SQL & NoSQL", category: "IT & Technology", type: "Paid" }, { title: "Email Marketing Campaigns That Convert", category: "Marketing & Sales", type: "Paid" }, { title: "CRM Management for Sales & Support Teams", category: "Marketing & Sales", type: "Paid" }, { title: "Employee Engagement Analytics with Surveys", category: "Human Resources", type: "Paid" }, { title: "Graphic Design for Non-Designers", category: "Design & Engineering", type: "Paid" }, { title: "Inventory Tracking Systems & Tools", category: "Business & Operations", type: "Paid" }, { title: "Knowledge Base Creation & Management", category: "Business Systems", type: "Paid" }, { title: "Lab Management for Research & Testing Environments", category: "Business & Operations", type: "Paid" }, { title: "Live Chat Support Excellence", category: "Marketing & Sales", type: "Paid" }, { title: "Logistics Planning for Supply Chain Success", category: "Business & Operations", type: "Paid" }, { title: "Marketing Automation Tools & Tactics", category: "Marketing & Sales", type: "Paid" }, { title: "Network Administration for Modern IT Systems", category: "IT & Technology", type: "Paid" }, { title: "Operations Analytics with Real-World Case Studies", category: "Business & Operations", type: "Paid" }, { title: "Programming Essentials for Non-Coders", category: "IT & Technology", type: "Paid" }, { title: "Payroll Processing: Tools, Laws, and Compliance", category: "Human Resources", type: "Paid" }, { title: "Pipeline Management for B2B Sales Teams", category: "Marketing & Sales", type: "Paid" }, { title: "Business Process Analysis & Optimization", category: "Business & Operations", type: "Paid" }, { title: "Project Management with Asana & MS Project", category: "Business & Operations", type: "Paid" }, { title: "Rapid Prototyping with Figma & Adobe XD", category: "Design & Engineering", type: "Paid" }, { title: "AI-Powered Recruitment Automation", category: "Human Resources", type: "Paid" }, { title: "Financial Modeling for Valuation & Strategy", category: "Finance & Accounting", type: "Paid" }, { title: "Risk Analysis for Financial & Operational Planning", category: "Finance & Accounting", type: "Paid" }, { title: "Facility Management: Tools, Safety & Compliance", category: "Business & Operations", type: "Paid" }, { title: "Safety Compliance and Workplace Regulation Training", category: "Legal & Compliance", type: "Paid" }, { title: "Procurement Management & Vendor Strategy", category: "Business & Operations", type: "Paid" }, { title: "Sales Analytics with CRM Tools", category: "Marketing & Sales", type: "Paid" }, { title: "Sales Automation for High-Performance Teams", category: "Marketing & Sales", type: "Paid" }, { title: "Strategic Forecasting & Simulation Techniques", category: "Finance & Accounting", type: "Paid" },
+                { title: "Getting Started with CRM Tools: Salesforce Essentials", category: "Free Courses", type: "Free" }, { title: "Email Outreach Basics: From Strategy to Execution", category: "Free Courses", type: "Free" }, { title: "Excel for Beginners: Formulas, Charts & More", category: "Free Courses", type: "Free" }, { title: "Intro to Financial Modeling with Spreadsheets", category: "Free Courses", type: "Free" }, { title: "SAP Fundamentals for Business Professionals", category: "Free Courses", type: "Free" }, { title: "Tally Accounting Basics for Small Business", category: "Free Courses", type: "Free" }, { title: "Microsoft Office Essentials: Word, Excel, PowerPoint", category: "Free Courses", type: "Free" }, { title: "Payroll & Compliance Basics for HR Beginners", category: "Free Courses", type: "Free" }, { title: "Digital Marketing: SEO & Social Media Starter Kit", category: "Free Courses", type: "Free" }, { title: "Understanding Accounting Principles Made Easy", category: "Free Courses", type: "Free" }
             ];
 
             const courseGrid = document.getElementById('course-grid');
             const filterContainer = document.getElementById('filter-container');
+            const modal = document.getElementById('registerModal');
+            const modalClose = document.querySelector('.modal-close');
+            const registrationForm = document.getElementById('registrationForm');
+            const courseNameInput = document.getElementById('courseNameInput');
+            const formMessage = document.getElementById('formMessage');
+            const submitBtn = document.getElementById('submitBtn');
 
             const displayCourses = (courseList) => {
                 courseGrid.innerHTML = ''; 
                 courseList.forEach(course => {
                     const card = document.createElement('div');
                     card.className = 'course-card';
-
-                    let priceHTML = '';
-                    let buttonText = 'Register Now';
-
-                    if (course.type === 'Paid') {
-                        priceHTML = `
-                            <div class="price-info">
-                                <span class="exam-fee">Exam Fee: ₹699</span>
-                                <span class="material-fee">Course Material (Optional): ₹1499</span>
-                            </div>`;
-                    } else {
-                        priceHTML = `<div class="price-info"><span class="free-tag">FREE</span></div>`;
-                        buttonText = 'Enroll for Free';
-                    }
-
-                    card.innerHTML = `
-                        <div class="card-top">
-                            <h3>${course.title}</h3>
-                            <span class="course-category">${course.category}</span>
-                        </div>
-                        <div class="card-bottom">
-                            ${priceHTML}
-                            <button class="register-btn">${buttonText}</button>
-                        </div>
-                    `;
+                    let priceHTML = course.type === 'Paid' ? `<div class="price-info"><span class="exam-fee">Exam Fee: ₹699</span><span class="material-fee">Course Material (Optional): ₹1499</span></div>` : `<div class="price-info"><span class="free-tag">FREE</span></div>`;
+                    let buttonText = course.type === 'Paid' ? 'Register Now' : 'Enroll for Free';
+                    card.innerHTML = `<div class="card-top"><h3>${course.title}</h3><span class="course-category">${course.category}</span></div><div class="card-bottom">${priceHTML}<button class="register-btn">${buttonText}</button></div>`;
                     courseGrid.appendChild(card);
                 });
             };
 
             const setupFilters = () => {
-                // (1) Added "Free Courses" category right after "All"
                 const paidCategories = [...new Set(courses.filter(c => c.type === 'Paid').map(c => c.category))];
                 const categories = ['All', 'Free Courses', ...paidCategories.sort()];
-                
                 categories.forEach(category => {
                     const button = document.createElement('button');
                     button.className = 'filter-btn';
                     button.textContent = category;
                     button.dataset.filter = category;
-                    if (category === 'All') {
-                        button.classList.add('active');
-                    }
+                    if (category === 'All') button.classList.add('active');
                     filterContainer.appendChild(button);
                 });
-
                 filterContainer.addEventListener('click', (e) => {
                     if (e.target.classList.contains('filter-btn')) {
                         filterContainer.querySelector('.active').classList.remove('active');
                         e.target.classList.add('active');
-
                         const filter = e.target.dataset.filter;
-                        let filteredCourses;
-
-                        if (filter === 'All') {
-                            filteredCourses = courses;
-                        } else if (filter === 'Free Courses') {
-                            filteredCourses = courses.filter(course => course.type === 'Free');
-                        } else {
-                            filteredCourses = courses.filter(course => course.category === filter);
-                        }
-                        
+                        const filteredCourses = filter === 'All' ? courses : filter === 'Free Courses' ? courses.filter(c => c.type === 'Free') : courses.filter(c => c.category === filter);
                         displayCourses(filteredCourses);
                     }
                 });
             };
+            
+            // --- Modal & Form Logic ---
+            function showModal(courseName) {
+                courseNameInput.value = courseName;
+                modal.classList.add('visible');
+            }
 
+            function hideModal() {
+                modal.classList.remove('visible');
+                registrationForm.reset();
+                formMessage.style.display = 'none';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Register Now';
+            }
+            
+            // Event listener for opening the modal
+            courseGrid.addEventListener('click', function(e) {
+                if (e.target.classList.contains('register-btn')) {
+                    const card = e.target.closest('.course-card');
+                    const courseTitle = card.querySelector('h3').textContent;
+                    showModal(courseTitle);
+                }
+            });
+            
+            // Event listeners for closing the modal
+            modalClose.addEventListener('click', hideModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+
+            // Form submission logic
+            registrationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (googleSheetUrl === 'YOUR_GOOGLE_SHEET_URL_HERE') {
+                    alert('Developer: Please set the googleSheetUrl variable in the script.');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+
+                const formData = new FormData(registrationForm);
+                const data = Object.fromEntries(formData.entries());
+
+                fetch(googleSheetUrl, {
+                    method: 'POST',
+                    mode: 'no-cors', // Important for simple Google Scripts deployment
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                .then(() => {
+                    formMessage.textContent = 'Success! Your registration has been received.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    setTimeout(hideModal, 3000); // Hide modal after 3 seconds
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    formMessage.textContent = 'An error occurred. Please try again.';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Register Now';
+                });
+            });
+
+            // --- Initial Load ---
             setupFilters();
             displayCourses(courses);
         });
